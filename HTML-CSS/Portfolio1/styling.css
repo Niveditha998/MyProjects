@@ -249,7 +249,7 @@ body{
 }
 
 .content-left{
-    text-align: left;
+    text-align: center;
     animation:slideFromLeft 1s ease forwards;
     opacity: 0;
 
