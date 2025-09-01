@@ -54,8 +54,8 @@ body{
 }
 
 .logo-text{
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+    font-weight: 600;
     color: var(--link-color);
 }
 
@@ -114,7 +114,6 @@ body{
     align-items:center;
     margin: 0 auto;
     justify-content: center;
-
 }
 
 .content-left{
@@ -123,15 +122,14 @@ body{
     animation:slideFromLeft 1s ease forwards;
     opacity: 0;
     padding-left: 10%;
-
 }
 
+/* Slide-in animation */
 @keyframes slideFromLeft {
     0% {
         opacity:0;
         transform:translateX(-100%);
     }
-
     100%{
         opacity: 1;
         transform:translateX(0);
@@ -139,20 +137,42 @@ body{
 }
 
 .section-label{
-    font-size: 1.15rem;
-    font-weight: 600;
-    color:var(--primary-color)
+    font-size: 5rem;       /* increased size */
+    font-weight: 700;
+    color: var(--link-color); /* your main theme color */
+    letter-spacing: 1px;
+    margin: 0;    
 }
 
+/* Name */
 .section-title{
-    font-size:1.3rem;
-    padding: 1.1 rem;
-    color: var(--text-color);
+    font-size: 0.8rem;       /* decreased size */
+    font-weight: 600;
+    color: black;
+    margin: 0;
+    line-height: 1.2; 
 }
 
-.section-description{
-    color: var(--gray);
-    font-size: 1.13rem;
+
+.section-description {
+    font-size: 1.2rem;        /* adjusted size */
+    line-height: 1.8;
+    margin-top: 1rem;
+    color: black;           /* new color */
+    font-weight: 600;
+}
+
+.section-description .role {
+    color: black;       /* explicitly black */
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Tagline */
+.section-description .tagline {
+    display: block;
+    margin-top: 0.5rem;
+    color: black;              /* tagline color */
 }
 
 .connecting-group{
@@ -164,6 +184,7 @@ body{
     gap: 1rem; 
     margin-top: 1.5rem;
 }
+
 .connecting-group img {
     width: 30px; 
     height: auto;
@@ -176,7 +197,6 @@ body{
     font-size: 0.5rem;
     font-weight: 200;
 }
-
 
 .content-right{
     display:flex;
@@ -237,93 +257,411 @@ body{
     }
 } 
 
-.About-section{
-    max-width: 1280px;
-    display:flex;
+
+
+.About-section {
+    max-width: auto;
+    display: flex;
     flex-direction: column;
-    gap:2rem;
-    padding:0.6rem;
-    align-items:center;
+    gap: 2rem;
+    padding: 1.5rem;
     margin: 0 auto;
-
+    text-align: center; /* Default center alignment for small screens */
+    background-color: #f0f0f0;
 }
 
-.content-left{
-    text-align: center;
-    animation:slideFromLeft 1s ease forwards;
-    opacity: 0;
-
+.left-content {
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-@keyframes slideFromLeft {
-    0% {
-        opacity:0;
-        transform:translateX(-100%);
+.label-section {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    display: block;
+    background: none;
+    margin: 1rem 0 1.5rem 0; 
+}
+
+.title-section {
+    font-size: 2rem;                
+    font-weight: 600;               
+    color: #222;                    
+    text-align: center;             
+    margin: 1rem 0 1.5rem 0;        
+    line-height: 1.2;               
+    letter-spacing: 1px;            
+    text-transform: capitalize;     
+}
+
+.description-section {
+    color: var(black);
+    font-size: 0.7rem;
+    line-height: 1.7;
+    text-align: justify; /* Makes paragraphs align cleanly */
+}
+
+.text1, .text2 {
+    display: block;
+    margin-bottom: 1rem;
+    color: black;
+    font-size: 1rem;
+}
+
+/* For bigger screens: left-align content */
+@media screen and (min-width: 768px) {
+    .About-section {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: center; /* Left align text */
+        gap: 3rem;
     }
 
-    100%{
-        opacity: 1;
-        transform:translateX(0);
-    }
-}
-
-.label-section{
-    font-size: 1.15rem;
-    font-weight: 600;
-    color:var(--primary-color)
-}
-
-.title-section{
-    font-size:1.3rem;
-    padding: 0.6rem;
-    color: var(--text-color);
-}
-
-.description-section{
-    color: var(--gray);
-    font-size: 1.13rem;
-}
-
-.text1{
-      margin-bottom: 1.5rem;
-      display: block;
-}
-.text2{
-      margin-bottom: 1.5rem;
-      display: block;
-}
-
-@media screen and (min-width:768px) {
-    
-    .content-left{
-        max-width: 50%;
-        text-align: left;
+    .left-content {
+        max-width: 60%;
     }
 
-    .title-section{
-        padding-left: 0;
-    }
-
-    .label-section{
-        font-size: 1rem;
-    }
-
-    .title-section{
+    .title-section {
         font-size: 2rem;
+        text-align: center;
     }
 
-    .description-section{
+    .description-section {
         font-size: 1.1rem;
-        color: var(--text-color);
-        width: 78%;
+        width: 100%;
     }
+}
 
-    .text1{
-      margin-bottom: 0.6rem;
-      display: block;
-     }
-    .text2{
-      margin-bottom: 0.6rem;
-      display: block;
-    }
+
+.Experience-Container{
+    background-color: var(--background-color);
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1280px;
+}
+.Experience-Content{
+    color: var(black);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    text-align: justify;
+
+}
+.Experience-title{
+    font-size: 1.875rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--link-color);
+    margin: 1.5rem 0 1.5rem 0;
+}
+
+.Experience-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 2rem;
+}
+
+.Experience-card{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(171, 163, 163);
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1.2rem;
+    gap: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Experience-card:hover{
+    transform: scale(1.05);;
+    box-shadow: 0 4px 8px rbga(0,0,0,0.2);
+    border: 1px solid blue;
+}
+
+.Experience-text {
+    font-size: 1rem;                
+    line-height: 1.6;               
+    color: black;                    
+    margin: 0;                       
+    padding: 1rem;                  
+    text-align: justify;   
+    text-justify: inter-word;    
+    hyphens: auto;                
+    word-wrap: break-word;           
+    width: 100%;                     
+    box-sizing: border-box;    
+    display:block              
+}
+.Experience-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.Experience-avatar img{
+    height: 5rem;
+    width: 5rem;
+}
+
+.Experience-details{
+    color: #555;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.Experience-company{
+    color: var(--primary-color);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.Experience-duration{
+    font-size: 0.875rem;
+    color: #3a3a3a;
+}
+
+.Project-Container {
+  background-color: white;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+.Project-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--link-color);
+  margin-bottom: 2rem;
+}
+
+.Project-grid {
+  display: flex;
+  flex-direction: column; /* stack cards vertically */
+  gap: 2rem;
+  padding: 1rem;
+  align-items: center; /* center cards horizontally */
+}
+
+.Project-card {
+  display: flex;
+  flex-direction: row; /* side-by-side layout */
+  align-items: flex-start;
+  gap: 2rem;
+  width: 80%;
+  padding: 1.5rem;
+  border: 1px solid rgb(171, 163, 163);
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: rgb(240, 239, 239);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Project-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--link-color);
+}
+
+/* Image */
+.Project-Photo {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Project-Photo img {
+  width: 280px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+/* Text */
+.Project-Overview {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+.Project-Name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: black;
+  text-align: center;   /* center text */
+  width: 100%;          /* ensures it takes full width */
+  margin-bottom: 0.5rem;
+}
+
+.Project-Text {
+  font-size: 1rem;
+  color: rgb(39, 38, 38);
+  line-height: 1.7;        /* slightly taller for readability */
+  text-align: justify;     /* aligns text evenly on both sides */
+  margin-bottom: 1rem;     /* spacing below each block */
+  word-spacing: 0.05rem;   /* smooth word spacing */
+}
+
+.Project-Text p {
+  margin-bottom: 0.8rem;   /* space between paragraphs */
+}
+
+.Project-Link {
+  margin-top: 0.5rem;
+  text-decoration: none;
+  color: var(--link-color);
+  font-weight: bold;
+  text-align: center;   /* center text */
+  width: 100%;          /* ensures it takes full width */
+  margin-bottom: 0.5rem;
+  transition: color 0.3s;
+}
+
+.Project-Link:hover {
+  color: #222;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .Project-card {
+    flex-direction: column;
+    width: 95%;
+    text-align: center;
+  }
+
+  .Project-Overview {
+    align-items: center;
+    text-align: center;
+  }
+
+  .Project-Photo img {
+    max-width: 100%;
+  }
+}
+
+
+/* Footer overall */
+.footer {
+  background-color: rgb(232, 231, 231);
+  color: var(--link-color);
+  padding: 40px 20px;
+  font-family: 'Arial', sans-serif;
+  max-height: 9000px;
+}
+
+/* Flex container for left + right alignment */
+.footer-container {
+  display: flex;
+  justify-content: space-between; /* left + right */
+  align-items: left;            /* vertical center */
+  flex-wrap: wrap;                /* stack on small screens */
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+/* Contact details column */
+.Details {
+  display: flex;
+  flex-direction: column;   /* stack neatly */
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 400px;
+  margin-left: 15rem;
+}
+
+/* "Get in touch" title */
+.footer-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--link-color);
+  margin-bottom: 5px;
+  align-items: left;
+}
+
+/* Email styling */
+.footer-email {
+  font-size: 16px;
+  margin: 0;
+  color: white;
+  background-color: black;
+  padding: 12px 30px;
+  border-radius: 15px;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+/* Resume link styling */
+.resume-link {
+  display: inline-flex;         /* flex so icon + text align side by side */
+  align-items: center;          /* vertically center */
+  gap: 8px;                     /* space between icon and text */
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--link-color);
+  text-decoration: underline;    /* adds a line across the text */
+  text-decoration-thickness: 2px; /* thicker line */
+  text-underline-offset: 4px;    /* adjust distance from text */
+  margin-bottom: 0;
+}
+
+/* Resume link hover effect */
+.resume-link:hover {
+  transform: scale(1.05);
+  color: var(--link-color);
+}
+
+/* Resume link icon */
+.resume-link img {
+  width: 20px;   /* adjust size as needed */
+  height: 20px;
+  object-fit: contain;
+}
+
+
+/* Social icons (right side) */
+.footer-grid {
+  display: flex;
+  justify-content: center;
+  margin-right: 15rem;
+  margin-top: 3rem;
+}
+
+.footer-grid-column {
+  display: flex;
+  gap: 50px;
+}
+
+.footer-grid-column img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+
+.footer-grid-column img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.2);
+}
+
+/* Mobile view: stack neatly */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .Details {
+    align-items: center;
+  }
+  .footer-grid {
+    justify-content: center;
+  }
 }
